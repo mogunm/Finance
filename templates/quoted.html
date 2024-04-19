@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote 
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3 fs-2 fw-bold">
+         Stock :  Price 
+    </div>
+    <div class="mb-3 fs-2">
+        {{ quotes['symbol'] }} : {{ quotes['price'] | usd }}
+    </div>
+{% endblock %}

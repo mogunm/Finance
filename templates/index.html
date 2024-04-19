@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home 
+{% endblock %}
+
+{% block main %}    
+
+      <div class="badge bg-transparent text-dark fs-4 mb-3">
+        Portfolio
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for stock in stocks %}
+            <tr>
+              <td>{{ stock.symbol }}</td>
+              <td>{{ stock.tot_shares }}</td>
+              <td>{{ stock.price | usd }}</td>
+              <td>{{ stock.total | usd  }} </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th scope="row">BUYING POWER</th>
+            <td>{{ cash | usd }}</td>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th scope="row">INVESTING</th>
+            <td>{{ grand_total | usd }}</td>
+          </tr>
+        </thead>
+      </table>
+{% endblock %}

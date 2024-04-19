@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post" class=" row g-2 d-flex justify-content-center">
+        <div class="badge bg-transparent text-dark fs-4 mb-3">
+            Purchase Stock Shares 
+        </div>
+        <div class="col-auto">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Ticker Symbol" type="text">
+        </div>
+        <div class="col-auto">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Number of Shares" type="text">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Buy</button>
+        </div>
+        <div class="mt-3">
+            <a href="/quote" style="text-decoration:none"> Search for Stock's Current Price</a>
+        </div>
+    </form>
+{% endblock %}
