@@ -1,1 +1,4 @@
 finance.db
+.venv
+venv
+__pycache__
